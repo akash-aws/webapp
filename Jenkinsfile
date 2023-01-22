@@ -35,7 +35,7 @@ pipeline {
 		stage ('docker-push') {
 			steps {
 				withCredentials([string(credentialsId: 'dockerid', variable: 'dockerpwd')]) {
-				sh "docker login -u akash7775 -p ${docker}"
+				sh "docker login -u akash7775 -p ${dockerid}"
                 sh 'docker push akash7775/mytomcat:$tag'
 			}
 			}
